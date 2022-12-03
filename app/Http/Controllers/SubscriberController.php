@@ -16,11 +16,6 @@ use Illuminate\Support\Facades\Validator;
 class SubscriberController extends ApiController
 {
 
-    public function __construct()
-    {
-       $this->user = JWTAuth::parseToken()->authenticate();
-    }
-    
     //----function list of Email---//
     public function list(){
 

@@ -11,14 +11,6 @@ use Illuminate\Http\Request;
 class C_vController extends ApiController
 {
     
- // protected $user;
- 
- public function __construct()
- {
-    $this->user = JWTAuth::parseToken()->authenticate();
- }
-
-
 //---list cvs ----///
 
  public function list(){

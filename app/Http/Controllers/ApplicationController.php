@@ -9,10 +9,6 @@ use App\Models\Application;
 
 class ApplicationController extends ApiController
 {
-    public function __construct()
-    {
-       $this->user = JWTAuth::parseToken()->authenticate();
-    }
     
     //--list all the app and paginate --//
     public function list(){

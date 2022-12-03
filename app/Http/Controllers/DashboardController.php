@@ -9,11 +9,7 @@ use App\Models\Application;
 use App\Models\Subscriber;
 class DashboardController extends Controller
 {
-    public function __construct()
-    {
-       $this->user = JWTAuth::parseToken()->authenticate();
-    }
-
+   
     public function list(){
 
         // $average = DB::table('applactions')->avg('id');

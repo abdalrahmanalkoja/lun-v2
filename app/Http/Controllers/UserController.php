@@ -17,11 +17,6 @@ use Illuminate\Support\Facades\Validator;
 class UserController extends ApiController
 {
 
-    public function __construct()
- {
-    $this->user = JWTAuth::parseToken()->authenticate();
- }
-
     //-- function make user update his information--//
     public function editProfile(UserRequest $request, $user_id )
     {

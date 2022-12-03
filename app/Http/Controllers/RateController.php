@@ -8,10 +8,7 @@ use App\Models\Rate;
 
 class RateController extends ApiController
 {
-    public function __construct()
-    {
-       $this->user = JWTAuth::parseToken()->authenticate();
-    }
+    
     // -- view all reviews-- //
     public function list(){
 

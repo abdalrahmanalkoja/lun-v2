@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
+    public function __construct()
+    {
+       $this->user = JWTAuth::parseToken()->authenticate();
+    }
+    
     protected function success($data=[], $message='success', $code=200)
     {
         return $this->result('success', $data, $message, $code);

@@ -16,12 +16,7 @@ use Illuminate\Support\Collection;
 
 class JobController extends ApiController
 {
-       // protected $user;
- 
-    public function __construct()
-    {
-       $this->user = JWTAuth::parseToken()->authenticate();
-    }
+
 
     //-- show all jobs --//
     public function list(){
@@ -51,7 +46,7 @@ class JobController extends ApiController
         ];
 
         $collection->push($data);
-        
+
       }
 
         return $this->success($collection) ;
@@ -69,12 +64,12 @@ class JobController extends ApiController
     }
 
 
-    
-    //--Store a new blog post--//  
+
+    //--Store a new blog post--//
 
     public function store(JobRequest $request){
 
-        if ($request->hasFile('image')) { 
+        if ($request->hasFile('image')) {
 
             $image 		= $request->file('image');
             $filename 	= Str::uuid().'.'.time().'.'.$request->image->getClientOriginalExtension();
@@ -89,17 +84,17 @@ class JobController extends ApiController
             return $this->error(['error' => 'job_store'], 'Invalid request');
 
         }
-                    
+
        return $this->success();
 
 
     }
 
-    
+
     //-- update job --//
     public function update(JobRequest $request, $job_id )
     {
-      
+
         if(!$job_id){
             return $this->error(['error' => 'job_update'], 'Invalid request');
         }
@@ -110,24 +105,24 @@ class JobController extends ApiController
             return $this->error(['error' => 'job_update'], 'Invalid request');
         }
 
-        if ($request->hasFile('image')) { 
+        if ($request->hasFile('image')) {
 
             $image 		= $request->file('image');
             $filename 	= Str::uuid().'.'.time().'.'.$request->image->getClientOriginalExtension();
             $image      ->storeAs('public/images', $filename);
         }
-       
+
            $data = $request->all();
            $data['image'] = $filename;
            $job->update($data);
-       
+
         return $this->success();
     }
 
 
     public function destroy($id)
     {
-        
+
         if(!$id){
             return $this->error(['error' => 'product_destroy'], 'Invalid request');
         }
@@ -135,6 +130,6 @@ class JobController extends ApiController
         Job::query()->where('id', $id)->delete();
         return $this->success();
     }
-    
-   
+
+
 }
