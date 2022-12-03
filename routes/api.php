@@ -19,16 +19,16 @@ use Illuminate\Support\Facades\Auth;
                      //-------Auth route---------//
                                      
 
-Route::post('login', [App\http\Controllers\AuthController::class, 'authenticate']);
-//Route::post('login', 'AuthController@authenticate');
-Route::post('register', [App\http\Controllers\AuthController::class, 'register']);
-//Route::post('register', 'AuthController@register');
-Route::get('logout', [App\http\Controllers\AuthController::class, 'logout']);
-//Route::post('logout', 'AuthController@logout');
-Route::post('refresh', [App\http\Controllers\AuthController::class, 'refresh']);
-//Route::post('refresh', 'AuthController@refresh');
-Route::get('user-profile', [App\http\Controllers\AuthController::class, 'get_user']);
-//Route::post('get_user', 'AuthController@get_user');
+Route::post('login', [App\Http\Controllers\AuthController::class, 'authenticate']);
+
+Route::post('register', [App\Http\Controllers\AuthController::class, 'register']);
+
+Route::get('logout', [App\Http\Controllers\AuthController::class, 'logout']);
+
+Route::post('refresh', [App\Http\Controllers\AuthController::class, 'refresh']);
+
+Route::get('user-profile', [App\Http\Controllers\AuthController::class, 'get_user']);
+
 
                     //-------jobs route---------//  
 
