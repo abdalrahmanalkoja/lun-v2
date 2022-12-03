@@ -23,6 +23,7 @@ class JobController extends ApiController
        $this->user = JWTAuth::parseToken()->authenticate();
     }
 
+    //-- show all jobs --//
     public function list(){
 
         $jobs = Job::query()->paginate(7);
@@ -56,7 +57,7 @@ class JobController extends ApiController
         return $this->success($collection) ;
     }
 
-
+    //-- only one job --//
     public function index(){
         $id = request('id', 0);
         if(!$id){
@@ -95,7 +96,7 @@ class JobController extends ApiController
     }
 
     
-    
+    //-- update job --//
     public function update(JobRequest $request, $job_id )
     {
       

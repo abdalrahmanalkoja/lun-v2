@@ -22,7 +22,7 @@ class UserController extends ApiController
     $this->user = JWTAuth::parseToken()->authenticate();
  }
 
-
+    //-- function make user update his information--//
     public function editProfile(UserRequest $request, $user_id )
     {
       

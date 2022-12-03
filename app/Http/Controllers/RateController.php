@@ -12,14 +12,14 @@ class RateController extends ApiController
     {
        $this->user = JWTAuth::parseToken()->authenticate();
     }
-
+    // -- view all reviews-- //
     public function list(){
 
         $items = Rate::query()->paginate(7);
 
         return $this->success($items);
     }
-
+    //-- delete review--//
     public function destroy($id)
     {
         
@@ -31,6 +31,7 @@ class RateController extends ApiController
         return $this->success();
     }
 
+    //--ada review--//
     public function store(RateRequest $request){
 
         
