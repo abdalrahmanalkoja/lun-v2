@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Auth;
 */
 
                      //-------Auth route---------//
-                                     
 
+/dsadas
 Route::post('login', [App\Http\Controllers\AuthController::class, 'authenticate']);
 
 Route::post('register', [App\Http\Controllers\AuthController::class, 'register']);
@@ -30,7 +30,7 @@ Route::post('refresh', [App\Http\Controllers\AuthController::class, 'refresh']);
 Route::get('user-profile', [App\Http\Controllers\AuthController::class, 'get_user']);
 
 
-                    //-------jobs route---------//  
+                    //-------jobs route---------//
 
 
 Route::prefix('job')->group(function () {
@@ -48,7 +48,7 @@ Route::prefix('job')->group(function () {
 });
 
 
-                    //----Applications route---//      
+                    //----Applications route---//
 
 Route::prefix('application')->group(function () {
 
@@ -110,7 +110,7 @@ Route::prefix('rate')->group(function () {
 
 Route::prefix('dashboard')->group(function () {
 
-    Route::get('index', [App\Http\Controllers\RateController::class, 'index']); 
+    Route::get('index', [App\Http\Controllers\RateController::class, 'index']);
 
 });
 
