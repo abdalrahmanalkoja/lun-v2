@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-//use  App\Http\Controllers;
+use  App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -84,6 +84,7 @@ Route::prefix('subscribe')->group(function () {
 
 Route::prefix('cv')->group(function () {
 
+
     Route::get('list', [App\Http\Controllers\C_vController::class, 'list']);
 
     Route::get('index/{id}', [App\Http\Controllers\C_vController::class, 'index']);
@@ -97,6 +98,7 @@ Route::prefix('cv')->group(function () {
 });
 
 Route::prefix('rate')->group(function () {
+
 
     Route::get('list', [App\Http\Controllers\RateController::class, 'list']);
 
